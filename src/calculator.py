@@ -22,7 +22,7 @@ class MainWindow(qtw.QWidget):              # Janela Principal
         btn_6 = qtw.QPushButton('6')
         btn_5 = qtw.QPushButton('5')
         btn_4 = qtw.QPushButton('4')
-        btn_3 = qtw.QPushButton('3')
+        btn_3 = qtw.QPushButton('3')        # A ordem no escopo não importa
         btn_2 = qtw.QPushButton('2')
         btn_1 = qtw.QPushButton('1')
         btn_0 = qtw.QPushButton('0')
@@ -30,6 +30,26 @@ class MainWindow(qtw.QWidget):              # Janela Principal
         btn_mins = qtw.QPushButton('-')
         btn_mult = qtw.QPushButton('*')
         btn_divid = qtw.QPushButton('/')
+
+        # Adicionando os botões e a escala da calculadora para o Layout
+        container.layout().addWidget(result_field,0,0,1,4)
+        container.layout().addWidget(btn_result,1,0,1,2)
+        container.layout().addWidget(btn_clear,1,2,1,2)
+        container.layout().addWidget(btn_9,2,0)
+        container.layout().addWidget(btn_8,2,1)
+        container.layout().addWidget(btn_7,2,2)
+        container.layout().addWidget(btn_plus,2,3)
+        container.layout().addWidget(btn_6,3,0)
+        container.layout().addWidget(btn_5,3,1)
+        container.layout().addWidget(btn_4,3,2)
+        container.layout().addWidget(btn_mins,3,3)
+        container.layout().addWidget(btn_3,4,0)
+        container.layout().addWidget(btn_2,4,1)
+        container.layout().addWidget(btn_1,4,2)
+        container.layout().addWidget(btn_mult,4,3)
+        container.layout().addWidget(btn_0,5,0,1,3)
+        container.layout().addWidget(btn_divid,5,3)
+        self.layout().addWidget(container) # Coloca a ferramenta no container principal
 
 app = qtw.QApplication([])
 mw = MainWindow()
